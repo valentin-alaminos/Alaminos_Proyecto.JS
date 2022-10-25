@@ -1,4 +1,4 @@
-//USUARIO
+/* //USUARIO
 class Usuario{
     constructor (nombreCompleto, edad, obraSocial, mail, telefono, contraseña) {
         this.nombreCompleto = nombreCompleto;
@@ -98,18 +98,61 @@ for (let propiedad in Luis){
 
 
 
-console.log(Luis.nombreCompleto)
+console.log(Luis.nombreCompleto) */
+
+class Turno {
+    constructor(nombre, medico, fecha, hora, motivo){
+        this.nombre = nombre;
+        this.medico = medico;
+        this.fecha = fecha;
+        this.motivo = motivo;
+        this.hora = hora;
+    }
+}
+ 
+const turnos = []; 
+
+function nuevoTurno(){
+    let nombre = document.getElementById("NombreApellido").value;
+    let medico = document.getElementById("Doctor").value;
+    let hora = document.getElementById("Hora").value;
+    let fecha = document.getElementById("fecha").value;
+    let motivo = document.getElementById("motivo").value;
+    let turno = new Turno(nombre, medico, fecha, hora, motivo);
+
+    /* turnos.push(turno); */
+    const listaStorage = JSON.parse(localStorage.getItem("registro"));
+    listaStorage.push(turno)
+    localStorage.setItem("registro", JSON.stringify(listaStorage))
 
 
 
+    /* localStorage.setItem("registro",JSON.stringify(turnos)); */
+}
 
 
+const formulario = document.getElementById("formulario");
+formulario.addEventListener("submit", (e)=>{
+    e.preventDefault();
+    nuevoTurno()
+    console.log(turnos); 
+}) 
+
+ 
+
+/* turnos.forEach(turno => {
+    let contenedorTurnos = document.createElement("table");
+    contenedorTurnos.innerHTML = 
+                                `<th>Paciente: ${turno.nombre}</th>
+                                <th>Fecha : ${turno.fecha}</th>
+                                <th>Medico: ${turno.medico}</th>
+                                <th>Hora: ${turno.hora}</th>
+                                <th>Motivo: ${turno.motivo}</th>` 
+    document.querySelector("#turnosR").append(contenedorTurnos);
+
+}) */
 
 
-
-
-
-//CONSULTAR MEDICOS
 
 
 

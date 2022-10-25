@@ -13,51 +13,43 @@
     <main>
         <section>
             <h1>Turno online</h1>
-            <form action="">
+            <form id="formulario" action="">
             <div class="field">
                 <label for=""> Nombre y apellido </label>
-                <input type="text" name="NombreApellido" required placeholder="Ingresa tu nombre y apellido">
+                <input type="text" name="NombreApellido"  placeholder="Ingresa tu nombre y apellido" id="NombreApellido"> <!-- nombre -->
             </div>
             <br>
             <div class="field">
                 <label for=""> Hora</label>
-                <input type="time" name="Hora" required placeholder="Ingresa el horario de tu visita">
+                <input type="time"   placeholder="Ingresa el horario de tu visita" id="Hora" > <!-- hora -->
             </div>
             <br>
             <div class="field">
                 <label for=""> Médico </label>
-                <select name="Doctor">
+                <select id="Doctor">  <!-- doctor -->
                     <option selected disabled> Seleccione un doctor </option>
-                    <option value=""> Doctor 1 </option>
-                    <option value=""> Doctor 2 </option>
-                    <option value=""> Doctor 3 </option>
+                    <option value="Doctor 1"> Doctor 1 </option>
+                    <option value="Doctor 2"> Doctor 2 </option>
+                    <option value="Doctor 3"> Doctor 3 </option>
                 </select>
             </div>
             <br>
             <div class="field">
                 <label for=""> Fecha </label>
-                <input type="date" name="Fecha" required>
+                <input type="date" name="Fecha"  id="fecha"> <!-- fecha -->
             </div>
             <br>
             <div class="textbox">
                 <label for=""> Motivo de consulta </label>
-                <textarea name=" consulta" id="" cols="30" rows="10"></textarea>
+                <textarea name=" consulta" id="motivo" cols="30" rows="10" ></textarea> <!-- consulta -->
             </div>
             <div class="submit">
-                <button>Aceptar</button>
+                <button id="btn">Enviar</button>
             </div>
             
             </form>
         </section>
     </main>
-
-
-    
-
-
-
-
-
 
 
 
